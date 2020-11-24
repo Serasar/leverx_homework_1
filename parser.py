@@ -51,17 +51,6 @@ class CLI:
         else:
             print("format must be JSON or XML")
 
-        # parser_instance.save_rooms_to_xml(self.cli_args)
-
-
-
-# cli_listen = CLI()
-# parser_instance = FileParser()
-# parser_instance.load_rooms("rooms.json")
-# parser_instance.load_students("students.json")
-# parser_instance.assign_students_to_rooms()
-# parser_instance.save_rooms_to_xml("output.xml")
-
 
 cli_instance = CLI()
 cli_instance.process_args()
