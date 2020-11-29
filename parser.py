@@ -51,12 +51,6 @@ class FileParser:
         for room in self.rooms:
             room["student_list"] = self.search_for_student(room["id"])
 
-    # def save_rooms_to_json(self, filepath):
-    #     open(filepath, "w").write(json.dumps(self.rooms, indent=4, sort_keys=True))
-
-    # def save_rooms_to_xml(self, filepath):
-    #     open(filepath, "w").write(xml_converter.dicttoxml(self.rooms, attr_type=False).decode('utf-8'))
-
 
 class CLI:
     def __init__(self):
@@ -75,12 +69,6 @@ class CLI:
         parser_instance.assign_students_to_rooms()
         converted_data = ConvertToFormat(parser_instance.rooms, self.cli_args.format.lower()).convert()
         SaveData(converted_data, "save_to_file", "output" + "." + self.cli_args.format.lower()).save()
-        # if self.cli_args.format.lower() == "json":
-        #     parser_instance.save_rooms_to_json("output.json")
-        # elif self.cli_args.format.lower() == "xml":
-        #     parser_instance.save_rooms_to_xml("output.xml")
-        # else:
-        #     print("format must be JSON or XML")
 
 
 cli_instance = CLI()
